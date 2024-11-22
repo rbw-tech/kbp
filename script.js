@@ -1,62 +1,86 @@
+/**
+* Inisialisasi semua fungsi setelah DOM selesai dimuat
+* Event listener untuk memastikan semua elemen HTML tersedia sebelum JavaScript dijalankan
+*/
 document.addEventListener('DOMContentLoaded', function() {
-    // Registration Form Handling
-    const form = document.getElementById('regForm');
-    const modal = document.getElementById('successModal');
-    const closeBtn = document.querySelector('.close-modal');
+    // Mendapatkan referensi elemen-elemen yang diperlukan
+    const form = document.getElementById('regForm');         // Form Registrasi
+    const modal = document.getElementById('successModal');   // Modal Sukses
+    const closeBtn = document.querySelector('.close-modal'); // Tombol tutup modal
 
+    /**
+    * Event handler untuk submit form
+    * Menangani proses pengiriman form dan menampilkan feedback
+    */
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Mencegah form melakukan submit default
         
-        // Show loading state
+        // Mengatur tampilan loading state pada tombol submit
         const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Processing...';
-        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;                        // Menyimpan text asli tombol
+        submitBtn.textContent = 'Processing...';                           // Mengubah text menjadi loading
+        submitBtn.disabled = true;                                         // Menonaktifkan tombol selama proses
 
+        /**
+        * Simulasi panggilan API dengan setTimeout
+        * Dalam implementasi nyata, ini akan diganti dengan actual API call
+        */
+        
         // Simulate API call
         setTimeout(() => {
-            // Show success modal
-            modal.classList.add('show');
+            modal.classList.add('show');             // Menampilkan modal sukses
             
-            // Reset form and button
-            form.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
+            // Mereset form dan tombol ke kondisi awal
+            form.reset();                            // Mengosongkan form
+            submitBtn.textContent = originalText;    // Mengembalikan text tombol
+            submitBtn.disabled = false;              // Mengaktifkan kembali tombol
         }, 1500);
     });
 
-    // Close modal when clicking close button or outside
+   /**
+    * Event handlers untuk menutup modal
+    * Dua cara: melalui tombol close atau klik di luar modal
+    */
     closeBtn.addEventListener('click', () => modal.classList.remove('show'));
     window.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('show');
     });
 
-    // Enroll buttons
+   /**
+    * Handler untuk tombol Enroll di setiap program card
+    * Mengatur auto-fill form dan smooth scroll
+    */
     const enrollBtns = document.querySelectorAll('.enroll-btn');
     enrollBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent card click
-            const program = e.target.closest('.program-card').dataset.program;
-            document.getElementById('programSelect').value = program;
-            document.getElementById('registration').scrollIntoView({ behavior: 'smooth' });
+            e.stopPropagation();                                                             // Mencegah event bubbling ke card
+            const program = e.target.closest('.program-card').dataset.program;               // Mendapatkan jenis program dari data attribute
+            document.getElementById('programSelect').value = program;                        // Auto-fill dropdown program
+            document.getElementById('registration').scrollIntoView({ behavior: 'smooth' });  // Scroll halus ke form registrasi
         });
     });
 
-    // Add scroll animation for elements
+   /**
+    * Konfigurasi Intersection Observer untuk animasi scroll
+    * Menambahkan animasi saat elemen muncul dalam viewport
+    */
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,                     // Trigger saat 10% elemen terlihat
+        rootMargin: '0px 0px -50px 0px'     // Offset trigger
     };
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('visible');       // Menambahkan class untuk animasi
             }
         });
     }, observerOptions);
 
-    // Observe all sections
+   /**
+    * Menerapkan observer ke semua section
+    * Mengamati setiap section untuk trigger animasi
+    */
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
