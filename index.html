@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBW-Tech Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="../resources/logo.webp" alt="RBW-Tech" class="logo">
+        <h1>RBW-Tech</h1>
+        <p class="tagline">Learn, Build, Grow.</p>
+    </header>
+
+    <main>
+        <!-- Program Kursus Cards -->
+        <section class="programs glass-effect">
+            <h2>Program Kami</h2>
+            <div class="program-cards">
+                <div class="program-card" data-program="web">
+                    <h3>Web Development</h3>
+                    <div class="program-details">
+                        <p>HTML, CSS, JavaScript & Modern Frameworks</p>
+                        <ul>
+                            <li>Frontend Development</li>
+                            <li>Backend Development</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                        <button class="enroll-btn">Daftar Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="program-card" data-program="data">
+                    <h3>Data Science</h3>
+                    <div class="program-details">
+                        <p>Python, ML & Data Analytics</p>
+                        <ul>
+                            <li>Data Analysis</li>
+                            <li>Machine Learning</li>
+                            <li>Statistical Modeling</li>
+                        </ul>
+                        <button class="enroll-btn">Daftar Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="program-card" data-program="cloud">
+                    <h3>Cloud Computing</h3>
+                    <div class="program-details">
+                        <p>AWS, Azure & GCP</p>
+                        <ul>
+                            <li>Cloud Architecture</li>
+                            <li>DevOps</li>
+                            <li>Security</li>
+                        </ul>
+                        <button class="enroll-btn">Daftar Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Registration Form -->
+        <section id="registration" class="registration glass-effect">
+            <h2>Form Registrasi</h2>
+            <form id="regForm">
+                <input type="text" placeholder="Nama Anda" required>
+                <input type="email" placeholder="Alamat Email" required>
+                <select id="programSelect" required>
+                    <option value="">Pilih Program</option>
+                    <option value="web">Web Development</option>
+                    <option value="data">Data Science</option>
+                    <option value="cloud">Cloud Computing</option>
+                </select>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+        <section class="glass-effect">
+            <h2>Testimoni Alumni</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Program</th>
+                            <th>Posisi</th>
+                            <th>Perusahaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ahmad Firdaus</td>
+                            <td>Web Development</td>
+                            <td>Senior Frontend Developer</td>
+                            <td>Tokopedia</td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Kusuma</td>
+                            <td>Data Science</td>
+                            <td>Data Analyst</td>
+                            <td>Gojek</td>
+                        </tr>
+                        <tr>
+                            <td>Budi Prakoso</td>
+                            <td>Cloud Computing</td>
+                            <td>Cloud Engineer</td>
+                            <td>Microsoft</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact">
+            <p>📧 radipta111@gmail.com</p>
+            <p>📱 +62 812-2726-7195</p>
+            <p>📍 Kasihan, Bantul, Yogyakarta</p>
+        </div>
+        <p class="copyright">© 2024 RBW-Tech</p>
+    </footer>
+
+    <!-- Modal untuk pendaftaran berhasil -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Registration Successful! 🎉</h3>
+            <p>We'll contact you soon with more details.</p>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

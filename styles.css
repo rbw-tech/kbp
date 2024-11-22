@@ -1,0 +1,291 @@
+:root {
+   --primary-color: #8f693c;
+   --secondary-color: #5d4037;
+   --text-color: #3e2723;
+   --glass-bg: rgba(255, 255, 255, 0.95);
+   --glass-border: rgba(255, 255, 255, 0.2);
+   --success-color: #28a745;
+   --danger-color: #dc3545;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+   color: var(--text-color);
+   background-image: url('../resources/background/default-landscape.webp');
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   min-height: 100vh;
+   line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+   text-align: center;
+   background: rgba(0, 0, 0, 0.5);
+   padding: 20px;
+}
+
+.logo {
+   width: 120px;
+   height: auto;
+   margin-bottom: 10px;
+}
+
+header h1 {
+   color: white;
+   margin: 0;
+   font-size: 2.5em;
+}
+
+.tagline {
+   color: white;
+   font-size: 1.2em;
+   margin: 10px 0 0;
+}
+
+/* Main Content */
+main {
+   max-width: 1200px;
+   margin: 20px auto;
+   padding: 0 20px;
+}
+
+.glass-effect {
+   background: var(--glass-bg);
+   backdrop-filter: blur(10px);
+   border-radius: 15px;
+   border: 1px solid var(--glass-border);
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+   margin-bottom: 30px;
+   padding: 30px;
+}
+
+/* Programs Section */
+.programs h2 {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.program-cards {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 20px;
+}
+
+.program-card {
+   background: white;
+   border-radius: 10px;
+   padding: 20px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.program-card h3 {
+   color: var(--primary-color);
+   margin-top: 0;
+   margin-bottom: 15px;
+}
+
+.program-details {
+   margin-top: 15px;
+}
+
+.program-details p {
+   margin-bottom: 15px;
+   color: var(--text-color);
+}
+
+.program-details ul {
+   margin: 15px 0;
+   padding-left: 20px;
+   list-style-type: none;
+}
+
+.program-details ul li {
+   margin-bottom: 8px;
+   position: relative;
+   padding-left: 20px;
+}
+
+.program-details ul li:before {
+   content: "→";
+   position: absolute;
+   left: 0;
+   color: var(--primary-color);
+}
+
+.enroll-btn {
+   background: var(--primary-color);
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   width: 100%;
+   margin-top: 15px;
+   transition: background 0.3s ease;
+   font-size: 1em;
+}
+
+.enroll-btn:hover {
+   background: var(--secondary-color);
+}
+
+.enroll-btn {
+   background: var(--primary-color);
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   width: 100%;
+   margin-top: 10px;
+   transition: background 0.3s ease;
+}
+
+.enroll-btn:hover {
+   background: var(--secondary-color);
+}
+
+/* Registration Form */
+.registration {
+   text-align: center;
+   max-width: 600px;
+   margin: 30px auto;
+}
+
+#regForm {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.table-container {
+   overflow-x: auto;
+   margin: 20px 0;
+ }
+ 
+ table {
+   width: 100%;
+   border-collapse: collapse;
+   background: white;
+   border-radius: 10px;
+   overflow: hidden;
+ }
+ 
+ th, td {
+   padding: 15px;
+   text-align: left;
+   border-bottom: 1px solid #eee;
+ }
+ 
+ th {
+   background: var(--primary);
+   color: rgb(0, 0, 0);
+   font-weight: 500;
+ }
+ 
+ tr:hover { background: #f9f9f9; }
+
+input, select {
+   padding: 12px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 1em;
+}
+
+input:focus, select:focus {
+   outline: none;
+   border-color: var(--primary-color);
+}
+
+button[type="submit"] {
+   background: var(--primary-color);
+   color: white;
+   padding: 12px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 1em;
+   transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+   background: var(--secondary-color);
+}
+
+/* Modal Styling */
+.modal {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0,0,0,0.5);
+   justify-content: center;
+   align-items: center;
+}
+
+.modal.show {
+   display: flex;
+}
+
+.modal-content {
+   background: white;
+   padding: 30px;
+   border-radius: 10px;
+   text-align: center;
+   max-width: 400px;
+   animation: modalIn 0.3s ease;
+}
+
+/* Footer */
+footer {
+   background: rgba(0, 0, 0, 0.8);
+   color: white;
+   padding: 20px;
+   text-align: center;
+   margin-top: 50px;
+}
+
+.contact {
+   margin-bottom: 15px;
+}
+
+.contact p {
+   margin: 5px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+   from { opacity: 0; transform: translateY(10px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalIn {
+   from { opacity: 0; transform: scale(0.8); }
+   to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   main {
+       padding: 0 15px;
+   }
+   
+   .program-cards {
+       grid-template-columns: 1fr;
+   }
+   
+   .modal-content {
+       margin: 0 20px;
+   }
+}
