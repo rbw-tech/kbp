@@ -21,7 +21,6 @@ body {
    line-height: 1.6;
 }
 
-/* Header Styling */
 header {
    text-align: center;
    background: rgba(0, 0, 0, 0.5);
@@ -46,7 +45,6 @@ header h1 {
    margin: 10px 0 0;
 }
 
-/* Main Content */
 main {
    max-width: 1200px;
    margin: 20px auto;
@@ -63,7 +61,6 @@ main {
    padding: 30px;
 }
 
-/* Programs Section */
 .programs h2 {
    text-align: center;
    margin-bottom: 30px;
@@ -221,7 +218,6 @@ button[type="submit"]:hover {
    background: var(--secondary-color);
 }
 
-/* Modal Styling */
 .modal {
    display: none;
    position: fixed;
@@ -247,7 +243,6 @@ button[type="submit"]:hover {
    animation: modalIn 0.3s ease;
 }
 
-/* Footer */
 footer {
    background: rgba(0, 0, 0, 0.8);
    color: white;
@@ -264,7 +259,6 @@ footer {
    margin: 5px 0;
 }
 
-/* Animations */
 @keyframes fadeIn {
    from { opacity: 0; transform: translateY(10px); }
    to { opacity: 1; transform: translateY(0); }
@@ -275,7 +269,6 @@ footer {
    to { opacity: 1; transform: scale(1); }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
    main {
        padding: 0 15px;
